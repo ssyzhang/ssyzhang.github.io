@@ -1,0 +1,471 @@
+/* --- 全局变量：机能极客风 (Cyber Minimal) --- */
+:root {
+    --bg-color: #050505;
+    /* 接近纯黑 */
+    --card-bg: #111111;
+    /* 极深灰卡片 */
+    --text-main: #ffffff;
+    --text-muted: #666666;
+    /* 很暗的灰色，突出主次 */
+    --accent-color: #FFC800;
+    /* 暖黄色 */
+
+    /* VS Code 颜色 */
+    --vscode-bg: #1e1e1e;
+    --vscode-sidebar: #252526;
+    --vscode-header: #333333;
+
+    /* 字体配置 */
+    --font-main: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    /* --- 新增：全局背景细线条网格 --- */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    /* 网格大小，越大越稀疏 */
+    background-attachment: fixed;
+    /* 网格固定，不随滚动条移动 */
+}
+
+/* --- 新增：浏览器右侧滚动条美化 --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+    /* 鼠标按住滚动条变黄 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- 导航栏 --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #222;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: var(--accent-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    transition: transform 0.3s, fill 0.3s;
+    display: block;
+}
+
+.nav-icon:hover svg {
+    fill: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* --- Hero 区域 --- */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-title {
+    font-family: var(--font-main);
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.cursor {
+    display: inline-block;
+    width: 15px;
+    height: 60px;
+    background-color: var(--accent-color);
+    animation: blink 1s infinite;
+    vertical-align: sub;
+    margin-left: 10px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-desc {
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+}
+
+.cta-btn {
+    margin-top: 50px;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 12px 40px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.4);
+}
+
+/* --- 内容布局 --- */
+.grid-section {
+    padding: 40px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+/* --- 卡片样式 --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.tech-card {
+    background: #111111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.card-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.close {
+    background-color: #ff5f56;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #27c93f;
+}
+
+.tech-card:hover .card-dot {
+    opacity: 1;
+}
+
+.card-date {
+    color: var(--accent-color);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.card-excerpt {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .github-card {
+        grid-column: span 1 !important;
+    }
+}
+
+/* --- VS Code 文章页 --- */
+.vscode-wrapper {
+    max-width: 90%;
+    margin: 50px auto;
+    background: var(--vscode-bg);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.window-header {
+    background: var(--vscode-header);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.vscode-body {
+    display: flex;
+}
+
+.vscode-sidebar {
+    width: 50px;
+    background: var(--vscode-sidebar);
+    border-right: 1px solid #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    gap: 20px;
+}
+
+.side-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    background: #888;
+}
+
+.side-icon.active {
+    opacity: 1;
+    background: #fff;
+    border-left: 2px solid #fff;
+}
+
+.post-content {
+    padding: 40px;
+    color: #d4d4d4;
+    font-family: var(--font-main);
+    flex: 1;
+}
+
+.post-content h1 {
+    color: #569cd6;
+    font-size: 2.2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.post-content h2 {
+    color: #4ec9b0;
+    font-size: 1.8rem;
+    margin-top: 40px;
+}
+
+.post-content h3 {
+    color: #dcdcaa;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.post-content p {
+    color: #cccccc;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.post-content a {
+    color: var(--accent-color);
+    border-bottom: 1px dashed var(--accent-color);
+}
+
+.post-content code {
+    background: #2d2d2d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ce9178;
+    font-family: var(--font-mono);
+}
+
+.post-content pre {
+    background: #111;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    border: 1px solid #333;
+}
+
+/* --- 暴力修复：强制图片适应屏幕宽度 --- */
+.post-content img,
+.article-entry img,
+.article-inner img,
+.content img {
+    max-width: 60% !important;
+    /* 宽度最大只能是容器的100%，不能溢出 */
+    height: auto !important;
+    /* 高度自动缩放，保证图片不变形 */
+    display: block !important;
+    /* 独占一行 */
+    margin: 20px auto !important;
+    /* 上下留白，左右居中 */
+    object-fit: contain;
+    /* 确保内容完整显示 */
+}
+
+.post-content,
+.article-entry,
+.post-content p,
+.article-entry p {
+    white-space: normal !important;
+    /* 恢复默认的换行规则 */
+    word-wrap: break-word !important;
+    /* 允许长单词换行 */
+    overflow-wrap: break-word !important;
+    /* 现代浏览器标准：内容溢出时换行 */
+    max-width: 100% !important;
+    /* 确保不超过父容器宽度 */
+}
+
+/* --- 暴力修复：代码块强制换行 --- */
+.post-content pre,
+.post-content code,
+.article-entry pre,
+.article-entry code,
+.highlight,
+.highlight table,
+.highlight .code {
+    white-space: pre-wrap !important;
+    /* 允许保留空格的同时换行 */
+    word-wrap: break-word !important;
+    /* 允许长单词换行 */
+    overflow-wrap: break-word !important;
+    /* 溢出时换行 */
+    max-width: 100% !important;
+    /* 限制最大宽度 */
+    box-sizing: border-box !important;
+    /* 边框算在宽度内 */
+}
+
+/* 如果是 Hexo 默认的代码高亮表格结构，需要额外限制 */
+.highlight {
+    display: block !important;
+    overflow-x: hidden !important;
+    /* 隐藏横向滚动条，强制换行 */
+}
