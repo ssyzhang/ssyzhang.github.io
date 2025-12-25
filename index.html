@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        siyuan&#39;s blog | SJTU
+    </title>
+    <!-- 图标 -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- 字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    <!-- 顶部进度条：颜色已改为 FFC800 (黄色) -->
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #FFC800; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/archives">Archives</a>
+                <a href="/about">About Me</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:siyuanzhang@sjtu.edu.cn" class="nav-icon" title="Email Me">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://github.com/ssyzhang" target="_blank" class="nav-icon" title="Visit my GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 第一页：全屏 Hero (强制高度 100vh) -->
+<section class="hero-section" style="height: 100vh; box-sizing: border-box;">
+    <h1 class="hero-title">
+        <span id="typewriter"></span><span class="cursor"></span>
+    </h1>
+
+    <p class="hero-desc">
+        siyuan's blog<br>
+        Graduate student of Shanghai Jiao Tong University<br>
+        DL / CV / LLM
+    </p>
+
+    <!-- 点击按钮滑向第二页 -->
+    <div>
+        <a href="#content-start" class="cta-btn">About Me</a>
+    </div>
+
+    <!-- 添加一个向下的小箭头提示 -->
+    <div style="position: absolute; bottom: 30px; animation: bounce 2s infinite;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" stroke-width="2">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+        </svg>
+    </div>
+</section>
+
+<!-- 第二页：内容区域 -->
+<div id="content-start" style="background: var(--bg-color); min-height: 100vh; padding-top: 80px;">
+
+    <section class="grid-section">
+
+        <!-- 1. OPEN SOURCE ACTIVITY (纯净版，不要 W&B 风格) -->
+        <div class="section-header">OPEN SOURCE ACTIVITY_</div>
+
+        <!-- 这里只是一个简单的容器，保证左对齐和滚动，没有背景色和边框 -->
+        <div style="width: 100%; overflow-x: auto; margin-bottom: 60px;">
+            <img src="https://ghchart.rshah.org/FFC800/ssyzhang" alt="Github chart"
+                style="width: 100%; min-width: 600px;">
+        </div>
+
+
+        <!-- 2. OVERVIEW & RESEARCH (保留 W&B 卡片风格) -->
+        <div class="section-header">OVERVIEW & RESEARCH_</div>
+
+        <div class="card-grid">
+            
+                <a href="/2025/12/25/hello-world/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-25
+                    </div>
+                    <h3 class="card-title">
+                        Hello World
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/09/langchain_6/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-09
+                    </div>
+                    <h3 class="card-title">
+                        day6:Ollama本地部署LLM
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            Ollama本地部署LLM
+
+下载Ollama即可实现开源大模型在本地的部署,实现了数据的安全
+
+
+相关指令如下
+
+ollama listollama run ...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/08/langchain_5/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-08
+                    </div>
+                    <h3 class="card-title">
+                        day5:RAG实战
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            RAG实战
+from config.load_key import load_keyfrom langchain_openai.embeddings impor...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/08/langchain/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-08
+                    </div>
+                    <h3 class="card-title">
+                        langchain
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            从0开始学习langchain
+课程参考链接
+
+
+day1:LLM的简单调用
+day2:LCEL链
+day3:大模型的工具调用
+day4:使用embedding...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/08/langchain_1/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-08
+                    </div>
+                    <h3 class="card-title">
+                        day1:LLM的简单调用
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            LLM的简单调用
+
+利用key.json管理api_key
+
+import osfrom config.load_key import load_keyfrom...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/08/langchain_2/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-08
+                    </div>
+                    <h3 class="card-title">
+                        day3:LCEL链
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            LCEL链
+
+LCEL链式语法
+
+import osfrom config.load_key import load_keyfrom langchain_cor...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/08/langchain_3/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-08
+                    </div>
+                    <h3 class="card-title">
+                        day3:大模型的工具调用
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            大模型的工具调用
+
+大模型工具机制
+
+
+Tools 工具理解
+
+import osfrom config.load_key import load_keyfro...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/08/langchain_4/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-08
+                    </div>
+                    <h3 class="card-title">
+                        day4:使用embedding实现自然语言搜索
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            使用embedding实现自然语言搜索
+
+embedding的调用
+
+from config.load_key import load_keyfrom lang...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/05/Leo1.0/" class="tech-card">
+                    <!-- W&B 风格装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
+                    <div class="card-date">// 2025-12-05
+                    </div>
+                    <h3 class="card-title">
+                        Leo1.0
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            Model introductionThis is a model fine-tuned using QLoRA based on the LLaMA-2-7b...
+                    </div>
+                </a>
+                
+        </div>
+
+    </section>
+
+</div>
+
+<!-- 脚本保持不变 -->
+<script>
+    const text = "SIYUAN ZHANG.";
+    const element = document.getElementById('typewriter');
+    let isDeleting = false;
+    let textIndex = 0;
+
+    function typeLoop() {
+        let speed = 150;
+        if (isDeleting) {
+            element.innerHTML = text.substring(0, textIndex - 1);
+            textIndex--;
+            speed = 60;
+        } else {
+            element.innerHTML = text.substring(0, textIndex + 1);
+            textIndex++;
+        }
+        if (!isDeleting && textIndex === text.length) {
+            speed = 3000;
+            isDeleting = true;
+        } else if (isDeleting && textIndex === 0) {
+            speed = 500;
+            isDeleting = false;
+        }
+        setTimeout(typeLoop, speed);
+    }
+    setTimeout(typeLoop, 500);
+</script>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
+    </footer>
+
+    <!-- 脚本部分 -->
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        if (window.innerWidth > 768) {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xFFC800,       // 已改为黄色
+                backgroundColor: 0x050505,
+                points: 8.00,
+                maxDistance: 22.00,
+                spacing: 40.00
+            })
+        }
+    </script>
+</body>
+
+</html>
